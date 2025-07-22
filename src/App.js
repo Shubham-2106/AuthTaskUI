@@ -6,6 +6,9 @@ import Register from './components/Register';
 import TaskList from './components/TaskList';
 import TaskForm from './components/TaskForm';
 
+
+const API_URL = process.env.REACT_APP_API_URL || '/api';
+
 function App() {
   const [token, setToken] = useState(localStorage.getItem('token'));
   const [showRegister, setShowRegister] = useState(false);
@@ -17,7 +20,7 @@ function App() {
   }, [token]);
 
   const fetchTasks = async () => {
-    const res = await fetch('/api/tasks', {
+    const res = await fetch(`${API_URL}/tasks`, {
       headers: { Authorization: `Bearer ${token}` }
     });
     if (res.ok) {
@@ -37,7 +40,7 @@ function App() {
 
   const handleSaveTask = async (task) => {
     const method = task._id ? 'PUT' : 'POST';
-    const url = task._id ? `/api/tasks/${task._id}` : '/api/tasks';
+    const url = task._id ? `${API_URL}/tasks/${task._id}` : `${API_URL}/tasks`;
     const res = await fetch(url, {
       method,
       headers: {
@@ -53,7 +56,7 @@ function App() {
   };
 
   const handleDeleteTask = async (id) => {
-    const res = await fetch(`/api/tasks/${id}`, {
+    const res = await fetch(`${API_URL}/tasks/${id}`, {
       method: 'DELETE',
       headers: { Authorization: `Bearer ${token}` }
     });

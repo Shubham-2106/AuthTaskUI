@@ -1,0 +1,168 @@
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+}
+
+.main-bg {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+}
+
+.auth-card, .app-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+  padding: 2.5rem 2rem;
+  min-width: 340px;
+  max-width: 400px;
+  width: 100%;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth-title, .task-title, .task-list-title {
+  color: #f857a6;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.auth-form, .task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.auth-input, .task-input {
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #f857a6;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s;
+}
+.auth-input:focus, .task-input:focus {
+  border: 1.5px solid #ff5858;
+}
+
+.auth-btn, .task-btn, .switch-btn, .logout-btn {
+  background: linear-gradient(90deg, #f857a6 0%, #ff5858 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background 0.2s, transform 0.2s;
+}
+.auth-btn:hover, .task-btn:hover, .switch-btn:hover, .logout-btn:hover {
+  background: linear-gradient(90deg, #ff5858 0%, #f857a6 100%);
+  transform: translateY(-2px) scale(1.03);
+}
+.switch-btn {
+  margin-top: 1rem;
+  background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%);
+}
+.switch-btn:hover {
+  background: linear-gradient(90deg, #185a9d 0%, #43cea2 100%);
+}
+.logout-btn {
+  align-self: flex-end;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #ff5858 0%, #f857a6 100%);
+}
+
+.auth-error {
+  color: #fff;
+  background: #ff5858;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+.auth-success {
+  color: #fff;
+  background: #43cea2;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.task-list-container {
+  width: 100%;
+}
+.task-list-title {
+  margin-bottom: 1rem;
+}
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.task-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f6d365;
+  border-radius: 10px;
+  margin-bottom: 0.7rem;
+  padding: 0.7rem 1rem;
+  box-shadow: 0 2px 8px rgba(248, 87, 166, 0.08);
+  transition: background 0.2s;
+}
+.task-list-item.completed {
+  background: #43cea2;
+  color: #fff;
+  text-decoration: line-through;
+}
+.task-list-text {
+  flex: 1;
+  font-size: 1.1rem;
+}
+.task-list-btn {
+  margin-left: 0.5rem;
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: #f857a6;
+  color: #fff;
+  transition: background 0.2s;
+}
+.task-list-btn.edit {
+  background: #43cea2;
+}
+.task-list-btn.delete {
+  background: #ff5858;
+}
+.task-list-btn:hover {
+  opacity: 0.85;
+}
+.task-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.task-checkbox {
+  accent-color: #43cea2;
+  width: 18px;
+  height: 18px;
+}
+.task-btn.cancel {
+  background: #ff5858;
+  margin-left: 0.5rem;
+}
